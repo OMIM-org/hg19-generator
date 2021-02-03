@@ -1,0 +1,1 @@
+# omim-hg19-generator
