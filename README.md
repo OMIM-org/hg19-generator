@@ -5,7 +5,7 @@ This is a simple script to generate GRCh37/hg19 genomic coordinate for MIM genes
 
 You will need ref_GRCh37.p5_top_level.gff3.gz which can downloaded from NCBI:
 
-  ftp://ftp.ncbi.nlm.nih.gov/genomes/archive/old_refseq/H_sapiens/ARCHIVE/BUILD.37.3/GFF/ref_GRCh37.p5_top_level.gff3.gz
+- [https://ftp.ncbi.nlm.nih.gov/genomes/archive/old_refseq/H_sapiens/ARCHIVE/BUILD.37.3/GFF/ref_GRCh37.p5_top_level.gff3.gz](https://ftp.ncbi.nlm.nih.gov/genomes/archive/old_refseq/H_sapiens/ARCHIVE/BUILD.37.3/GFF/ref_GRCh37.p5_top_level.gff3.gz)
 
 And genemap2.txt which can be downloaded from OMIM  (registration required):
 
@@ -17,6 +17,6 @@ Userful Links:
 
 - [OMIM](https://omim.org/)
 - [OMIM Downloads](https://omim.org/downloads)
-- ftp://ftp.ncbi.nlm.nih.gov/genomes/archive/old_refseq/H_sapiens/ARCHIVE/BUILD.37.3/GFF/ref_GRCh37.p5_top_level.gff3.gz
+- https://ftp.ncbi.nlm.nih.gov/genomes/archive/old_refseq/H_sapiens/ARCHIVE/BUILD.37.3/GFF/ref_GRCh37.p5_top_level.gff3.gz
 
 
