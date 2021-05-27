@@ -9,9 +9,7 @@ You will need ref_GRCh37.p5_top_level.gff3.gz which can downloaded from NCBI:
 
 And genemap2.txt which can be downloaded from OMIM:
 
-  [OMIM Downloads](https://omim.org/downloads)
-
-(registration required)
+  [OMIM Downloads](https://omim.org/downloads) (registration required)
 
 
 Userful Links:
