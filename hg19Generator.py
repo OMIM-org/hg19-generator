@@ -9,7 +9,7 @@
 #
 #   ftp://ftp.ncbi.nlm.nih.gov/genomes/archive/old_refseq/H_sapiens/ARCHIVE/BUILD.37.3/GFF/ref_GRCh37.p5_top_level.gff3.gz
 #
-# And mim2gene.txt which canb be downloaded from OMIM:
+# And mim2gene.txt which can be downloaded from OMIM:
 #
 #   https://omim.org/downloads
 #
