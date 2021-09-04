@@ -7,13 +7,11 @@
 #
 # You will need ref_GRCh37.p5_top_level.gff3.gz which can downloaded from NCBI:
 #
-#   https://ftp.ncbi.nlm.nih.gov/genomes/archive/old_refseq/H_sapiens/ARCHIVE/BUILD.37.3/GFF/ref_GRCh37.p5_top_level.gff3.gz
+#   ftp://ftp.ncbi.nlm.nih.gov/genomes/archive/old_refseq/H_sapiens/ARCHIVE/BUILD.37.3/GFF/ref_GRCh37.p5_top_level.gff3.gz
 #
-# And genemap2.txt which canb be downloaded from OMIM:
+# And mim2gene.txt which canb be downloaded from OMIM:
 #
 #   https://omim.org/downloads
-#
-# (registration required)
 #
 
 
@@ -21,7 +19,7 @@
 import re
 
 
-# Gene dict, K - 'geneID:chromosone', V - genomic coordinate
+# Gene dict, K - 'geneID', V - genomic coordinate
 geneDict = dict()
 
 # Process the GRCh37 data
@@ -72,14 +70,15 @@ with open('./ref_GRCh37.p5_top_level.gff3') as fileHandle:
         # Create the genomic coordinate
         genomicCoordinate = 'chr{0}:{1}-{2}'.format(chromosome, valueList[3], valueList[4])
 
-        # Create the gene dict key and add the genomic coordinate to the gene dict
-        geneDictKey = '{0}:{1}'.format(entrezGeneID, chromosome)
-        geneDict[geneDictKey] = genomicCoordinate
+        # Add the genomic coordinate to the gene dict
+        if entrezGeneID not in geneDict:
+            geneDict[entrezGeneID] = set()
+        geneDict[entrezGeneID].add(genomicCoordinate)
 
 
 
-# Process the OMIM genenmap2
-with open('./genemap2.txt') as fileHandle:
+# Process the OMIM mim2gene file
+with open('./mim2gene.txt') as fileHandle:
     for line in fileHandle:
 
         # Skip comments
@@ -93,19 +92,18 @@ with open('./genemap2.txt') as fileHandle:
         valueList = line.split('\t')
 
         # Get the fields
-        chromosome = valueList[0]
-        mimNumber = valueList[5]
-        approvedGeneSymbol = valueList[8]
-        entrezGeneID = valueList[9]
+        mimNumber = valueList[0]
+        entryType = valueList[1]
+        entrezGeneID = ''
+        if len(valueList) > 2:
+            entrezGeneID = valueList[2]
+        approvedGeneSymbol = ''
+        if len(valueList) > 2:
+            approvedGeneSymbol = valueList[3]
+        ensemblGeneID = ''
+        if len(valueList) > 2:
+            ensemblGeneID = valueList[4]
 
-        # Skip entries that don't have an Entrez Gene ID
-        if not entrezGeneID:
-            continue
-
-        # Create the gene dict key and write out the data
-        geneDictKey = '{0}:{1}'.format(entrezGeneID, chromosome[3:])
-        if geneDictKey in geneDict:
-            print('{0}\t{1}\t{2}\t{3}'.format(entrezGeneID, approvedGeneSymbol, mimNumber, geneDict.get(geneDictKey, '')))
-
-
-
+        # Write out the data
+        if entrezGeneID in geneDict:
+            print('{0}\t{1}\t{2}\t{3}'.format(entrezGeneID, approvedGeneSymbol, mimNumber, '|'.join(geneDict[entrezGeneID])))
