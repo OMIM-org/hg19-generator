@@ -7,7 +7,7 @@ You will need ref_GRCh37.p5_top_level.gff3.gz which can downloaded from NCBI:
 
 - [https://ftp.ncbi.nlm.nih.gov/genomes/archive/old_refseq/H_sapiens/ARCHIVE/BUILD.37.3/GFF/ref_GRCh37.p5_top_level.gff3.gz](https://ftp.ncbi.nlm.nih.gov/genomes/archive/old_refseq/H_sapiens/ARCHIVE/BUILD.37.3/GFF/ref_GRCh37.p5_top_level.gff3.gz)
 
-And mim2gene.txt which can be downloaded from OMIM (registration required):
+And mim2gene.txt which can be downloaded from OMIM:
 
 - [OMIM Downloads](https://omim.org/downloads)
 
