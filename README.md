@@ -19,6 +19,6 @@ Userful Links:
 
 - [OMIM](https://omim.org/)
 - [OMIM Downloads](https://omim.org/downloads)
-- https://ftp.ncbi.nlm.nih.gov/genomes/archive/old_refseq/H_sapiens/ARCHIVE/BUILD.37.3/GFF/ref_GRCh37.p5_top_level.gff3.gz
+- [https://www.ncbi.nlm.nih.gov/datasets/genomes/?taxon=9606](https://www.ncbi.nlm.nih.gov/datasets/genomes/?taxon=9606)
 
 
