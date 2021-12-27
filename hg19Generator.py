@@ -5,11 +5,9 @@
 #
 # This is a simple script to generate GRCh37/hg19 genomic coordinate for MIM genes.
 #
-# You will need genomic.gff which can downloaded from NCBI:
+# You will need the GCF_000001405.25_GRCh37.p13_genomic.gff.gz file which can downloaded from NCBI:
 #
-#   https://www.ncbi.nlm.nih.gov/datasets/genomes/?taxon=9606
-#
-# You will need to select the GRCh37.p13 dataset, download the 'Annotated features (GFF3)' and extract the genomic.gff file from the downloaded ZIP archive.
+#   https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.25_GRCh37.p13/GCF_000001405.25_GRCh37.p13_genomic.gff.gz
 #
 # And mim2gene.txt which can be downloaded from OMIM:
 #
@@ -25,7 +23,7 @@ import re
 geneDict = dict()
 
 # Process the GRCh37 data
-with open('./genomic.gff') as fileHandle:
+with open('./GCF_000001405.25_GRCh37.p13_genomic.gff') as fileHandle:
     for line in fileHandle:
 
         # Skip comments
