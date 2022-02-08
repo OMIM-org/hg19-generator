@@ -98,10 +98,10 @@ with open('./mim2gene.txt') as fileHandle:
         if len(valueList) > 2:
             entrezGeneID = valueList[2]
         approvedGeneSymbol = ''
-        if len(valueList) > 2:
+        if len(valueList) > 3:
             approvedGeneSymbol = valueList[3]
         ensemblGeneID = ''
-        if len(valueList) > 2:
+        if len(valueList) > 4:
             ensemblGeneID = valueList[4]
 
         # Write out the data
